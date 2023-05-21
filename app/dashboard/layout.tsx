@@ -1,6 +1,6 @@
 'use client'
 import { Inter } from 'next/font/google'
-import { NaviMenu } from '../navigation-menu'
+import { NaviMenu } from './navigation-menu'
 
 
 const inter = Inter({ subsets: ['latin'] })
