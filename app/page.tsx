@@ -38,53 +38,51 @@ export default function Home() {
 
   const handleEmailChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setEmail(event.target.value);
-  
+
   };
 
   const handlePasswordChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setPassword(event.target.value);
-  
+
   };
 
 
 
   const router = useRouter();
 
-  const pathname = usePathname();
 
   const handleSubmit = () => {
     login();
 
   };
-  
-async function login(): Promise<any> {
 
-  if (  (email == ("comexia@gmail.com" || "admin@gmail.com" || "boss@gmail.com" ) ) &&  (password == ("testTest.31A" ) ))
-  {
-    const responce = NextResponse.next();
-    responce.cookies.set('name', 'lee');
+  async function login(): Promise<any> {
 
-    router.push('/dashboard/offers');
+    if ((email == ("comexia@gmail.com" || "admin@gmail.com" || "boss@gmail.com")) && (password == ("testTest.31A"))) {
+      const responce = NextResponse.next();
+      responce.cookies.set('name', 'lee');
+
+      router.push('/dashboard/offers');
 
 
-  } else if ( !(email == ("comexia@gmail.com" || "admin@gmail.com" || "boss@gmail.com" ) ) ) {
-    console.log('toast');
-    toast({
-      variant: "destructive",
-      title: "Uh oh! wrong email .",
-      description: "Possibly there was a problem with your email request.",
-      action: <ToastAction onClick={() => {     setEmail('')  } } altText="Try again">Reset email </ToastAction>,
-    })
-  }  else if ( ! (password == ("testTest.31A" ) )) {
-    console.log('toast');
-    toast({
-      variant: "destructive",
-      title: "Uh oh! wrong password .",
-      description: "Possibly there was a problem with your password request.",
-      action: <ToastAction onClick={() => {     setPassword('')  } } altText="Try again">Reset password </ToastAction>,
-    })
+    } else if (!(email == ("comexia@gmail.com" || "admin@gmail.com" || "boss@gmail.com"))) {
+      console.log('toast');
+      toast({
+        variant: "destructive",
+        title: "Uh oh! wrong email .",
+        description: "Possibly there was a problem with your email request.",
+        action: <ToastAction onClick={() => { setEmail('') }} altText="Try again">Reset email </ToastAction>,
+      })
+    } else if (!(password == ("testTest.31A"))) {
+      console.log('toast');
+      toast({
+        variant: "destructive",
+        title: "Uh oh! wrong password .",
+        description: "Possibly there was a problem with your password request.",
+        action: <ToastAction onClick={() => { setPassword('') }} altText="Try again">Reset password </ToastAction>,
+      })
+    }
   }
-}
 
 
 
@@ -109,7 +107,7 @@ async function login(): Promise<any> {
           autoCapitalize="none"
           autoComplete="none"
           autoCorrect="off"
-          value={email} 
+          value={email}
           onChange={handleEmailChange}
           className=" h-14 w-full  text-lg	"
         />
@@ -122,7 +120,7 @@ async function login(): Promise<any> {
             autoCapitalize="none"
             autoComplete="none"
             autoCorrect="off"
-            value={password} 
+            value={password}
             onChange={handlePasswordChange}
             className=" h-14 w-full  text-lg	"
           />
@@ -130,9 +128,9 @@ async function login(): Promise<any> {
         }
 
         {(contine &&
-          <Button 
-          onClick={() => handleSubmit() }
-            className="bg-black text-white h-16 w-full  text-xl">  Continue  </Button> ) ||
+          <Button
+            onClick={() => handleSubmit()}
+            className="bg-black text-white h-16 w-full  text-xl">  Continue  </Button>) ||
 
 
           <Button onClick={() => { setContinue((prev) => true) }
