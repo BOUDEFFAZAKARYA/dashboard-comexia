@@ -31,7 +31,7 @@ export type keyword = {
 
 async function getData(): Promise<any> {
 
-     const {data} = await axios.get('http://146.190.184.106:81/api/products/invalide')
+     const {data} = await axios.get('https://146.190.184.106:81/api/products/invalide')
 
       return data  
     

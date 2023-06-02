@@ -36,7 +36,7 @@ export type Category = {
 
 async function getData(): Promise<any> {
 
-     const {data} = await axios.get('http://146.190.184.106:81/api/company/Invalid')
+     const {data} = await axios.get('https://146.190.184.106:81/api/company/Invalid')
 
       return data  
     
