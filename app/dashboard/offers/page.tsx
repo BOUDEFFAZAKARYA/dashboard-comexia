@@ -9,7 +9,6 @@ import { DataTable } from "./data-table"
 
 import { usePathname, useRouter } from 'next/navigation'
 
-import https from 'https';
 
 
 export type offers = {
@@ -34,16 +33,9 @@ export type keyword = {
 }
 
 async function getData(): Promise<any> {
-
-  const agent = new https.Agent({
-    rejectUnauthorized: false, // Allows insecure connections
-  });
   
-  const axiosInstance = axios.create({
-    httpsAgent: agent,
-  });
 
-     const {data} = await axiosInstance.get('http://api.www.comexia-dz.org:81/api/products/All')
+     const {data} = await axios.get('http://api.www.comexia-dz.org:81/api/products/All')
 
       return data  
     
