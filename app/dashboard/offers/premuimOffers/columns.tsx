@@ -57,7 +57,7 @@ export const columns: ColumnDef<offers>[] =
 
         console.log('Deleting offer...');
 
-        const { data } = await axios.delete(`https://146.190.184.106:81/api/products/Delete/${offerId}`);
+        const { data } = await axios.delete(`http://api.www.comexia-dz.org:81/api/products/Delete/${offerId}`);
 
         console.log('Offer deleted:', data);
 
@@ -68,7 +68,7 @@ export const columns: ColumnDef<offers>[] =
 
         console.log('premuim offer...');
 
-        const { data } = await axios.post(`https://146.190.184.106:81/api/products/premium/${offerId}`);
+        const { data } = await axios.post(`http://api.www.comexia-dz.org:81/api/products/premium/${offerId}`);
 
         console.log(' premuim offer:', data);
 
@@ -79,7 +79,7 @@ export const columns: ColumnDef<offers>[] =
 
         console.log('valide offer...');
 
-        const { data } = await axios.post(`https://146.190.184.106:81/api/products/valide/${offerId}`);
+        const { data } = await axios.post(`http://api.www.comexia-dz.org:81/api/products/valide/${offerId}`);
 
         console.log(' valide offer:', data);
 

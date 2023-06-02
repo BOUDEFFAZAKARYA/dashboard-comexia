@@ -48,7 +48,7 @@ export const columns: ColumnDef<Category>[] =
 
         console.log('Deleting catgorie...');
 
-        const { data } = await axios.delete(`https://146.190.184.106:81/api/categorie/Delete/${offerId}`);
+        const { data } = await axios.delete(`http://api.www.comexia-dz.org:81/api/categorie/Delete/${offerId}`);
 
         console.log('Categorie deleted:', data);
 
