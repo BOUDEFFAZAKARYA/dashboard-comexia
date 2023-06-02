@@ -169,7 +169,7 @@ const offer = {
 
     ]
 };
-  const response = await axios.post('http://localhost:8001/api/products/create', offer);
+  const response = await axios.post('http://146.190.184.106:81/api/products/create', offer);
 
   console.log('Response:', response.data);
 

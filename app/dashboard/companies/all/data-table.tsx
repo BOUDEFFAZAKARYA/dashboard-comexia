@@ -170,7 +170,7 @@ export function DataTable<TData, TValue>({
     };
 
 
-      const Response = await axios.post('http://localhost:8001/api/company/create', company);
+      const Response = await axios.post('http://146.190.184.106:81/api/company/create', company);
 
       console.log('Response:', Response.status);
 

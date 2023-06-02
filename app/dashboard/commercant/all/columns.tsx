@@ -82,7 +82,7 @@ export const columns: ColumnDef<commercant>[] =
 
         console.log('Deleting offer...');
 
-        const { data } = await axios.delete(`http://localhost:8001/api/products/Delete/${offerId}`);
+        const { data } = await axios.delete(`http://146.190.184.106:81/api/products/Delete/${offerId}`);
 
         console.log('Offer deleted:', data);
 
@@ -93,7 +93,7 @@ export const columns: ColumnDef<commercant>[] =
 
         console.log('premuim offer...');
 
-        const { data } = await axios.post(`http://localhost:8001/api/products/premium/${offerId}`);
+        const { data } = await axios.post(`http://146.190.184.106:81/api/products/premium/${offerId}`);
 
         console.log(' premuim offer:', data);
 
@@ -104,7 +104,7 @@ export const columns: ColumnDef<commercant>[] =
 
         console.log('valide offer...');
 
-        const { data } = await axios.post(`http://localhost:8001/api/products/valide/${offerId}`);
+        const { data } = await axios.post(`http://146.190.184.106:81/api/products/valide/${offerId}`);
 
         console.log(' valide offer:', data);
 
