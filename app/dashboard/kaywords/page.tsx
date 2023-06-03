@@ -1,4 +1,3 @@
-"use client"
 
 
 import { QueryClient, useHydrate, useQuery, useQueryClient } from "@tanstack/react-query"
