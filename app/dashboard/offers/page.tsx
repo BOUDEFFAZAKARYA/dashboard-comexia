@@ -1,15 +1,13 @@
 "use client"
 
 
+import { QueryClient, useHydrate, useQuery, useQueryClient } from "@tanstack/react-query"
 import axios from "axios"
 import { useEffect } from "react"
 import {  columns } from "./columns"
 import { DataTable } from "./data-table"
 
 import { usePathname, useRouter } from 'next/navigation'
-
-import http from 'http';
-import { data } from "autoprefixer"
 
 
 
@@ -35,14 +33,10 @@ export type keyword = {
 }
 
 async function getData(): Promise<any> {
-  const  data = http.get('http://api.www.comexia-dz.org:81/api/products/All');
-  
-  return   data ;
-  
 
+     const {data} = await axios.get('http://146.190.184.106:81/api/products/All')
 
-    // const {data} = await axios.get('http://api.www.comexia-dz.org:81/api/products/All')
-
+      return data  
     
     } 
    
