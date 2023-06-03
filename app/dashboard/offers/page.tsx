@@ -33,35 +33,12 @@ export type keyword = {
   id:number
   name:string
 }
-const makeInsecureHttpRequest = (url: string): Promise<any> => {
-  return new Promise((resolve, reject) => {
-    http.get(url, (response) => {
-      let data = '';
-
-      response.on('data', (chunk) => {
-        data += chunk;
-      });
-
-      response.on('end', () => {
-        resolve(data);
-      });
-    }).on('error', (error) => {
-      reject(error);
-    });
-  });
-};
 
 async function getData(): Promise<any> {
+  const  data = http.get('http://api.www.comexia-dz.org:81/api/products/All');
   
-  makeInsecureHttpRequest('http://api.www.comexia-dz.org:81/api/products/All')
-  .then((data) => {
-    console.log(data);
-    return data  
-
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+  return   data ;
+  
 
 
     // const {data} = await axios.get('http://api.www.comexia-dz.org:81/api/products/All')
