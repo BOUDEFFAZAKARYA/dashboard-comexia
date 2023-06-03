@@ -31,13 +31,13 @@ export type keyword = {
 
 async function getData(): Promise<any> {
 
-     const {data} = await axios.get('http://api.www.comexia-dz.org:81/api/products/valide')
+     const {data} = await axios.get('http://146.190.184.106:81/api/products/valide')
 
       return data  
     
     } 
    
-export default async function OffersPage() {
+export default async function ValideOffersPage() {
 
 
   

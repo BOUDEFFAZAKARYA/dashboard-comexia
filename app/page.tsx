@@ -62,7 +62,7 @@ export default function Home() {
       const responce = NextResponse.next();
       responce.cookies.set('name', 'lee');
 
-      router.push('/dashboard/offers');
+      router.push('/dashboard/offers/premuimOffers');
 
 
     } else if (!(email == ("comexia@gmail.com" || "admin@gmail.com" || "boss@gmail.com"))) {
