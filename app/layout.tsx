@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
 
 <head>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+   <meta http-equiv="Content-Security-Policy" content="connect-src http:"  />
       </head>
 
       <body className={inter.className}>
