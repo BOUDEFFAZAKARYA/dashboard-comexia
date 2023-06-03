@@ -142,7 +142,7 @@ export function DataTable<TData, TValue>({
   const handleSubmit = () => {
     addOffer();
     console.log('Input value:', inputValue);
-   // window.location.reload();
+    window.location.reload();
 
   };
 
