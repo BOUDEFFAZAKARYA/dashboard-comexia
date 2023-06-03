@@ -36,7 +36,10 @@ export type Category = {
 
 async function getData(): Promise<any> {
 
-     const {data} = await axios.get('http://146.190.184.106:81/api/Keyword/All')
+     const {data} = await axios.get('http://146.190.184.106:81/api/Keyword/All');
+
+     console.log("i'm here in getdata fct");
+
 
       return data  
     
@@ -49,6 +52,9 @@ export default async function KeywordPage() {
  if (!data) {
     return <div>Loading...</div>
   }
+
+  console.log("what the fuck happening");
+
 
   console.log(data);
 
