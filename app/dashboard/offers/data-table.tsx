@@ -142,7 +142,7 @@ export function DataTable<TData, TValue>({
   const handleSubmit = () => {
     addOffer();
     console.log('Input value:', inputValue);
-    window.location.reload();
+   // window.location.reload();
 
   };
 
@@ -169,7 +169,7 @@ const offer = {
 
     ]
 };
-  const response = await axios.post('http://api.www.comexia-dz.org:81/api/products/create', offer);
+  const response = await axios.post('http://146.190.184.106:81/api/products/create', offer);
 
   console.log('Response:', response.data);
 
