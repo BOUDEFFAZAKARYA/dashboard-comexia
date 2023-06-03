@@ -93,17 +93,17 @@ export function DataTable<TData, TValue>({
   const handleSubmit = () => {
     addKeyword();
     console.log('Input value:', inputValue);
-    window.location.reload();
+   // window.location.reload();
 
   };
 
 
 async function addKeyword(): Promise<any> {
 
-  console.log('Add catgorie...');
+  console.log('Add keyword...');
 
   const keyword = { name: inputValue  };
-  const response = await axios.post('http://api.www.comexia-dz.org:81/api/keyword/create', keyword);
+  const response = await axios.post('http://146.190.184.106:81/api/keyword/create', keyword);
 
   console.log('Response:', response.data);
 }
