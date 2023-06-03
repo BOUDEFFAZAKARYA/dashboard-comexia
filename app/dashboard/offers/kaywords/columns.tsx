@@ -49,7 +49,7 @@ export const columns: ColumnDef<keyword>[] =
 
         console.log('Deleting offer...');
 
-        const { data } = await axios.delete(`http://api.www.comexia-dz.org:81/api/keyword/Delete/${offerId}`);
+        const { data } = await axios.delete(`http://146.190.184.106:81/api/keyword/Delete/${offerId}`);
 
         console.log('Offer deleted:', data);
 
@@ -62,7 +62,7 @@ export const columns: ColumnDef<keyword>[] =
       const handleDeleteOffer = async (offerId: number) => {
         await supprimerOffer(offerId);
         console.log(id);
-        window.location.reload();
+       // window.location.reload();
 
       };
 
