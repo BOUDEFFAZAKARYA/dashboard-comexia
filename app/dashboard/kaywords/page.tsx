@@ -55,6 +55,8 @@ export default async function KeywordPage() {
   const [isLoading, setLoading] = useState(false);
  
   useEffect(() => {
+    console.log("useeffect");
+
     setLoading(true);
     fetch('http://146.190.184.106:81/api/Keyword/All')
       .then((res) => res.json())
@@ -62,13 +64,21 @@ export default async function KeywordPage() {
         setData(data);
         setLoading(false);
       });
-  }, []);
+  }, [data]);
  
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
 
+  console.log("data");
 
   console.log(data);
+
+
+  console.log("Setdata");
+
+
+  console.log(        setData(data)  );
+
 
   return (
     <div className="container mx-auto py-10">
