@@ -1,4 +1,5 @@
 "use client"
+
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -47,7 +48,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import axios from "axios"
-import { useRouter } from "next/router"
 
 
 
@@ -85,9 +85,6 @@ export function DataTable<TData, TValue>({
   })
 
   const [inputValue, setInputValue] = useState('');
-  const router = useRouter();
-
-
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setInputValue(event.target.value);
@@ -96,7 +93,7 @@ export function DataTable<TData, TValue>({
   const handleSubmit = () => {
     addKeyword();
     console.log('Input value:', inputValue);
-    router.replace(router.asPath)
+   window.location.reload();
 
   };
 
