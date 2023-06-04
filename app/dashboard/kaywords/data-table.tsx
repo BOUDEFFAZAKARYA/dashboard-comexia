@@ -104,7 +104,10 @@ async function addKeyword(): Promise<any> {
   console.log('Add keyword...');
 
   const keyword = { name: inputValue  };
-  const response = await axios.post('http://146.190.184.106:81/api/keyword/create', keyword);
+  
+  
+ const response = await  axios.post('http://146.190.184.106:81/api/keyword/create', keyword 
+);
 
   console.log('Response:', response.data);
 }

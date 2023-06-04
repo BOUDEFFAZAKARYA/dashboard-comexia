@@ -56,7 +56,7 @@ export function NaviMenu() {
 
     <div className="flex justify-center space-between content-start px-10 py-3 flex-row  items-center ">
        <Link className="" href={"/dashboard/offers"}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={100} height={36} />
+            <Image src="/comexia.svg" alt="Vercel Logo" width={140} height={60} />
 
             </Link>
     <NavigationMenu className="">

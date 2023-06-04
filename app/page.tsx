@@ -90,7 +90,7 @@ export default function Home() {
     <div className=" flex justify-center items-center h-screen   ">
       <div className="  space-y-4 w-1/3">
         <div className="flex justify-center">
-          <Image src="/vercel.svg" alt="Vercel Logo" width={100} height={36} />
+          <Image src="/comexia.svg" alt="Vercel Logo" width={140} height={60} />
 
         </div>
         <p className="text-center text-4xl font-bold		">Welcome back</p>
