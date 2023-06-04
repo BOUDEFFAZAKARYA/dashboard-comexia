@@ -1,13 +1,9 @@
-"use client"
 
-
-import { QueryClient, useHydrate, useQuery, useQueryClient } from "@tanstack/react-query"
 import axios from "axios"
-import { useEffect } from "react"
 import {  columns } from "./columns"
 import { DataTable } from "./data-table"
 
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname,  } from 'next/navigation'
 
 
 
@@ -42,10 +38,9 @@ async function getData(): Promise<any> {
    
 export default async function Page() {
 
-  const pathname = usePathname();
 
   
-  console.log('Current endpoint:', pathname);
+  console.log('Current endpoint:');
 
 
   const data = await getData();

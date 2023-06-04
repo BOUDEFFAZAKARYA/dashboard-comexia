@@ -1,4 +1,3 @@
-"use client"
 
 import { ColumnDef } from "@tanstack/react-table"
 
@@ -14,7 +13,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import axios from "axios"
-import { useState, useEffect } from 'react';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -45,11 +43,11 @@ export const columns: ColumnDef<keyword>[] =
 
 
 
-      async function supprimerOffer(offerId: number): Promise<any> {
+      async function supprimerk(offerId: number): Promise<any> {
 
         console.log('Deleting offer...');
 
-        const { data } = await axios.delete(`http://api.www.comexia-dz.org:81/api/keyword/Delete/${offerId}`);
+        const { data } = await axios.delete(`http://146.190.184.106:81/api/keyword/Delete/${offerId}`);
 
         console.log('Offer deleted:', data);
 
@@ -60,7 +58,7 @@ export const columns: ColumnDef<keyword>[] =
       
     
       const handleDeleteOffer = async (offerId: number) => {
-        await supprimerOffer(offerId);
+        await supprimerk(offerId);
         console.log(id);
         window.location.reload();
 
