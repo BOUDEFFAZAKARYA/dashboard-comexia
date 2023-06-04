@@ -55,7 +55,7 @@ export default  function KeywordPage() {
 
   
   const [isLoading, setLoading] = useState(false);
- 
+ /* 
   useEffect(() => {
     setLoading(true);
     fetch('http://146.190.184.106:81/api/Keyword/All')
@@ -71,8 +71,9 @@ export default  function KeywordPage() {
 
   console.log("data");
 
-  console.log(data);
+  console.log(data); */
 
+  console.log("data");
 
   return (
     <div className="container mx-auto py-10">
