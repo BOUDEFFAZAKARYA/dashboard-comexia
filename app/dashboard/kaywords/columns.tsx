@@ -57,10 +57,9 @@ export const columns: ColumnDef<keyword>[] =
     
       
     
-      const handleDeleteOffer =  (offerId: number) => {
-         supprimerk(offerId);
+      const handleDeleteOffer = async (offerId: number) => {
+        await supprimerk(offerId);
         console.log(id);
-        window.location.reload();
 
       };
 

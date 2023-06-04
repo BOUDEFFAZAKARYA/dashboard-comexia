@@ -48,6 +48,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import axios from "axios"
+import { mutate } from "swr"
 
 
 
@@ -84,33 +85,7 @@ export function DataTable<TData, TValue>({
 
   })
 
-  const [inputValue, setInputValue] = useState('');
-
-  const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    addKeyword();
-    console.log('Input value:', inputValue);
-   window.location.reload();
-
-  };
-
-
-
-async function addKeyword(): Promise<any> {
-
-  console.log('Add keyword...');
-
-  const keyword = { name: inputValue  };
   
-  
- const response = await  axios.post('http://146.190.184.106:81/api/keyword/create', keyword 
-);
-
-  console.log('Response:', response.data);
-}
 
   return (
     <div>
@@ -163,33 +138,7 @@ async function addKeyword(): Promise<any> {
         </div>
 
 
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className=" bg-black text-white ">ajouter keyword</Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>ajouter keyword</DialogTitle>
-              <DialogDescription>
-                Make a new to keyword here. Click save when you're done.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Name
-                </Label>
-                <Input id="name" value={inputValue} onChange={handleInputChange} className="col-span-3" />
-              </div>
-
-            </div>
-            <DialogFooter>
-
-              <Button               onClick={() => handleSubmit()}  type="submit">Save changes</Button>
-
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+     
 
       </div>
 
