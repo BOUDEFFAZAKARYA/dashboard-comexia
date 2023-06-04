@@ -45,13 +45,15 @@ async function getkeywords(): Promise<any> {
     
     } 
    
-export default async function KeywordPage() {
+export default  function KeywordPage() {
 
 
 
   //const data = await getkeywords();
 
   const [data, setData] = useState(null);
+
+  
   const [isLoading, setLoading] = useState(false);
  
   useEffect(() => {
@@ -74,8 +76,12 @@ export default async function KeywordPage() {
 
   return (
     <div className="container mx-auto py-10">
-   { <DataTable columns={columns} data={data} /> }
+{(data &&
+                  <DataTable columns={columns} data={data} /> 
 
+
+
+        )}
     </div>
 
   )
