@@ -1,8 +1,9 @@
+"use client"
 
 
 import { QueryClient, useHydrate, useQuery, useQueryClient } from "@tanstack/react-query"
 import axios from "axios"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import {  columns } from "./columns"
 import { DataTable } from "./data-table"
 
@@ -33,7 +34,7 @@ export type Category = {
   name:string
 }
 
-async function getData(): Promise<any> {
+async function getkeywords(): Promise<any> {
 
      const {data} = await axios.get('http://146.190.184.106:81/api/Keyword/All');
 
@@ -46,13 +47,25 @@ async function getData(): Promise<any> {
    
 export default async function KeywordPage() {
 
-  const data = await getData();
 
- if (!data) {
-    return <div>Loading...</div>
-  }
 
-  console.log("what the fuck happening");
+  //const data = await getkeywords();
+
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+ 
+  useEffect(() => {
+    setLoading(true);
+    fetch('http://146.190.184.106:81/api/Keyword/All')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+ 
+  if (isLoading) return <p>Loading...</p>;
+  if (!data) return <p>No profile data</p>;
 
 
   console.log(data);
