@@ -52,26 +52,36 @@ export default  function KeywordPage() {
   //const data = await getkeywords();
 
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   
-  const [isLoading, setLoading] = useState(false);
- /* 
+  const [isLoading, setisLoading] = useState(false);
   useEffect(() => {
-    setLoading(true);
-    fetch('http://146.190.184.106:81/api/Keyword/All')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, [data]);
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://api.example.com/data');
+        const jsonData = await response.json();
+        setData(jsonData);
+        setisLoading(false);
+      } catch (err) {
+        setError(error);
+        setisLoading(false);
+      }
+    };
+    fetchData();
+
+
+  }, []);
  
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  console.log("data");
-
-  console.log(data); */
+  if (error) {
+    return <div>Error</div>;
+  }
+  console.log(data); 
 
   console.log("data");
 
@@ -112,13 +122,7 @@ export default  function KeywordPage() {
 
   return (
     <div className="container mx-auto py-10">
-{(data &&
-                  <DataTable columns={columns} data={data} /> 
-
-
-
-        )}
-                      <DataTable columns={columns} data={datastatic} /> 
+       <div>Data: {JSON.stringify(data)}</div>
 
     </div>
 
