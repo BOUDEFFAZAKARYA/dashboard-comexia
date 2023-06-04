@@ -16,15 +16,15 @@ export type Category = {
   name:string
 }
 
-async function getData(): Promise<any> {
+async function getData(): Promise<Category[]> {
 
-     const {data} = await axios.get('http://api.www.comexia-dz.org:81/api/categorie/All')
+     const {data} = await axios.get('http://146.190.184.106:81/api/categorie/All')
 
       return data  
     
     } 
    
-export default async function Page() {
+export default async function CategoryPage() {
 
   const data = await getData();
 

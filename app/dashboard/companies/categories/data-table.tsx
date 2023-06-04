@@ -103,7 +103,7 @@ async function addCategory(): Promise<any> {
   console.log('Add catgorie...');
 
   const category = { name: inputValue  };
-  const response = await axios.post('http://api.www.comexia-dz.org:81/api/categorie/create', category);
+  const response = await axios.post('http://146.190.184.106:81/api/categorie/create', category);
 
   console.log('Response:', response.data);
 
