@@ -60,7 +60,7 @@ export default  function KeywordPage() {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.example.com/data');
+        const response = await fetch('http://146.190.184.106:81/api/Keyword/All        ');
         const jsonData = await response.json();
         setData(jsonData);
         setisLoading(false);
