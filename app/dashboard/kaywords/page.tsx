@@ -75,6 +75,41 @@ export default  function KeywordPage() {
 
   console.log("data");
 
+  const datastatic = [
+    {
+      "id": 1,
+      "name": "agricultural-machinery"
+    },
+    {
+      "id": 2,
+      "name": "baby-products"
+    },
+    {
+      "id": 3,
+      "name": "fitness"
+    },
+    {
+      "id": 4,
+      "name": "football"
+    },
+    {
+      "id": 5,
+      "name": "ticket"
+    },
+    {
+      "id": 8,
+      "name": "test2"
+    },
+    {
+      "id": 9,
+      "name": "test3"
+    },
+    {
+      "id": 10,
+      "name": "test3"
+    }
+  ]
+
   return (
     <div className="container mx-auto py-10">
 {(data &&
@@ -83,6 +118,8 @@ export default  function KeywordPage() {
 
 
         )}
+                      <DataTable columns={columns} data={datastatic} /> 
+
     </div>
 
   )
