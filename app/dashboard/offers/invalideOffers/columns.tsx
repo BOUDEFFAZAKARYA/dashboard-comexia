@@ -90,24 +90,18 @@ export const columns: ColumnDef<offers>[] =
     
       const handleDeleteOffer = async (offerId: number) => {
         await supprimerOffer(offerId);
-     
-        console.log(id);
-        window.location.reload();
+
 
       };
       const handlePremuimOffer = async (offerId: number) => {
         await premiumOffer(offerId);
-    
-        console.log(id);
-        window.location.reload();
+
 
       };
 
       const handleValideOffer = async (offerId: number) => {
         await valideOffer(offerId);
-       
-        console.log(id);
-        window.location.reload();
+    
 
       };
     
@@ -170,8 +164,5 @@ export const columns: ColumnDef<offers>[] =
   {
     accessorKey: "valide",
     header: "valide",
-  },{
-    accessorKey: "keywords",
-    header: "keywords",
   },
 ]

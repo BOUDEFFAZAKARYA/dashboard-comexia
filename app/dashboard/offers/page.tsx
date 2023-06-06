@@ -51,6 +51,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
+import { Progress } from "@/components/ui/progress"
+
+import { Skeleton } from "@/components/ui/skeleton"
+
+
+
+
 export type offers = {
   id: number
   title: string
@@ -102,7 +109,19 @@ export default function Page() {
   console.log(data)
 
   if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
+  if (isLoading)     return <div className="flex items-center justify-center space-x-4 py-10">
+  <div className="space-y-4 items-center ">
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+  </div>
+</div>
+
 
   async function addOffer(): Promise<any> {
     const offer = {

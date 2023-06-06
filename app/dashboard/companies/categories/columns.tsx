@@ -60,8 +60,6 @@ export const columns: ColumnDef<Category>[] =
       const handleDeleteOffer = async (offerId: number) => {
         await supprimerOffer(offerId);
 
-        console.log(id);
-        window.location.reload();
 
       };
      

@@ -62,7 +62,7 @@ export const columns: ColumnDef<companies>[] =
 
         console.log('Deleting offer...');
 
-        const { data } = await axios.delete(`http://api.www.comexia-dz.org:81/api/products/Delete/${offerId}`);
+        const { data } = await axios.delete(`http://api.www.comexia-dz.org:81/api/company/Delete/${offerId}`);
 
         console.log('Offer deleted:', data);
 
@@ -88,15 +88,11 @@ export const columns: ColumnDef<companies>[] =
     
       const handleDeleteOffer = async (offerId: number) => {
         await supprimerOffer(offerId);
-        console.log(id);
-        window.location.reload();
 
       };
 
       const handleValideOffer = async (offerId: number) => {
         await valideOffer(offerId);
-        console.log(id);
-        window.location.reload();
 
       };
     
@@ -144,9 +140,6 @@ export const columns: ColumnDef<companies>[] =
   {
     accessorKey: "valide",
     header: "valide",
-  },{
-    accessorKey: "keywords",
-    header: "keywords",
   },
   {
     accessorKey: "Category",

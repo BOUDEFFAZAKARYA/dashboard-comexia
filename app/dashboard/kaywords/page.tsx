@@ -19,6 +19,7 @@ import { Label } from "@/components/ui/label"
 import axios from "axios"
 import useSWR, { mutate } from "swr"
 import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 
@@ -34,7 +35,19 @@ export default function Page() {
   console.log(data)
 
   if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
+  
+  if (isLoading)     return <div className="flex items-center justify-center space-x-4 py-10">
+  <div className="space-y-4 items-center ">
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+  </div>
+</div>
 
 
   const handleInputChange = (event: { target: { value: React.SetStateAction<string> } }) => {

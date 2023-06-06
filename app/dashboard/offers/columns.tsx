@@ -91,14 +91,12 @@ export const columns: ColumnDef<offers>[] =
         await supprimerOffer(offerId);
 
         console.log(id);
-        window.location.reload();
 
       };
       const handlePremuimOffer = async (offerId: number) => {
         await premiumOffer(offerId);
      
         console.log(id);
-        window.location.reload();
 
       };
 
@@ -106,7 +104,6 @@ export const columns: ColumnDef<offers>[] =
         await valideOffer(offerId);
  
         console.log(id);
-        window.location.reload();
 
       };
     
@@ -131,12 +128,12 @@ export const columns: ColumnDef<offers>[] =
             <DropdownMenuItem
               onClick={() => handlePremuimOffer(id)}
             >
-              make it premuim
+              premuim /not premuim
             </DropdownMenuItem>          
             <DropdownMenuItem
               onClick={() => handleValideOffer(id)}
             >
-              valider
+              valider/invalider
             </DropdownMenuItem>          </DropdownMenuContent>
         </DropdownMenu>
       )
@@ -169,8 +166,5 @@ export const columns: ColumnDef<offers>[] =
   {
     accessorKey: "valide",
     header: "valide",
-  },{
-    accessorKey: "keywords",
-    header: "keywords",
   },
 ]

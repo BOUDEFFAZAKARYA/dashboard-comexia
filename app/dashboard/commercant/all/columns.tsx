@@ -89,48 +89,15 @@ export const columns: ColumnDef<commercant>[] =
         return data;
       }
 
-      async function premiumOffer(offerId: number): Promise<any> {
-
-        console.log('premuim offer...');
-
-        const { data } = await axios.post(`http://api.www.comexia-dz.org:81/api/products/premium/${offerId}`);
-
-        console.log(' premuim offer:', data);
-
-        return data;
-      }
-
-      async function valideOffer(offerId: number): Promise<any> {
-
-        console.log('valide offer...');
-
-        const { data } = await axios.post(`http://api.www.comexia-dz.org:81/api/products/valide/${offerId}`);
-
-        console.log(' valide offer:', data);
-
-        return data;
-      }
+    
       
     
       const handleDeleteOffer = async (offerId: number) => {
         await supprimerOffer(offerId);
-        console.log(id);
-        window.location.reload();
+
 
       };
-      const handlePremuimOffer = async (offerId: number) => {
-        await premiumOffer(offerId);
-        console.log(id);
-        window.location.reload();
-
-      };
-
-      const handleValideOffer = async (offerId: number) => {
-        await valideOffer(offerId);
-        console.log(id);
-        window.location.reload();
-
-      };
+    
     
  
       return (
@@ -148,18 +115,8 @@ export const columns: ColumnDef<commercant>[] =
             >
               Supprimer
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-
-            <DropdownMenuItem
-              onClick={() => handlePremuimOffer(id)}
-            >
-              make it premuim
-            </DropdownMenuItem>          
-            <DropdownMenuItem
-              onClick={() => handleValideOffer(id)}
-            >
-              valider
-            </DropdownMenuItem>          </DropdownMenuContent>
+                   
+              </DropdownMenuContent>
         </DropdownMenu>
       )
     },
@@ -204,9 +161,5 @@ export const columns: ColumnDef<commercant>[] =
     header: "abonnement",
   },
   
-  {
-    accessorKey: "Companies",
-    header: "Companies",
-  },
  
 ]

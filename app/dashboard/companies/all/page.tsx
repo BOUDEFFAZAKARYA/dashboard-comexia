@@ -1,69 +1,63 @@
+
+
 "use client"
 
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
-import { QueryClient, useHydrate, useQuery, useQueryClient } from "@tanstack/react-query"
+import { Button } from "@/components/ui/button"
+
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import axios from "axios"
-import { useEffect } from "react"
-import {  columns } from "./columns"
-import { DataTable } from "./data-table"
-
-
-export type companies = {
-  id: number
-  name: string
-  countryCode:string
-  desc: string
-  valide:boolean
-  keywords: keyword
-  category :Category
-
-}
+import useSWR, { mutate } from "swr"
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 
-export type keyword = {
+const fetcher = (url: string) => axios.get(url).then(res => res.data);
 
-  id:number
-  name:string
-}
-
-export type Category = {
-
-  id:number
-  name:string
-}
-
-async function getData(): Promise<any> {
-
-     const {data} = await axios.get('http://api.www.comexia-dz.org:81/api/company/All')
-
-      return data  
-    
-    } 
-   
-export default async function Page() {
+export default function Page() {
 
 
+
+  const { data, error, isLoading , mutate } = useSWR('http://api.www.comexia-dz.org:81/api/company/All', fetcher , { refreshInterval: 1000 })
+
+  console.log(data)
+
+  if (error) return <div>failed to load</div>
   
-
-
-  const data = await getData();
-
-
-  
-  if (!data) {
-    return <div>Loading...</div>
-  }
-
-  console.log(data.data);
+  if (isLoading)     return <div className="flex items-center justify-center space-x-4 py-10">
+  <div className="space-y-4 items-center ">
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+    <Skeleton className="h-8 w-[1000px]" />
+  </div>
+</div>
 
 
 
   return (
     <div className="container mx-auto py-10">
-   { <DataTable columns={columns} data={data.data} /> }
 
-    </div>
+      <DataTable columns={columns} data={data.data} />
 
-  )
+    </div>)
 }
+
+
